@@ -133,7 +133,8 @@ class _BackdropState extends State<Backdrop>
             // TODO: Add open login (104)
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (BuildContext context) => LoginPage()),
+              MaterialPageRoute(
+                  builder: (BuildContext context) => const LoginPage()),
             );
           },
         ),
@@ -146,7 +147,8 @@ class _BackdropState extends State<Backdrop>
             // TODO: Add open login (104)
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (BuildContext context) => LoginPage()),
+              MaterialPageRoute(
+                  builder: (BuildContext context) => const LoginPage()),
             );
           },
         ),
@@ -231,7 +233,7 @@ class _BackdropTitle extends AnimatedWidget {
           width: 72.0,
           child: IconButton(
             padding: const EdgeInsets.only(right: 8.0),
-            onPressed: this.onPress,
+            onPressed: onPress,
             icon: Stack(children: <Widget>[
               Opacity(
                 opacity: animation.value,
@@ -242,7 +244,8 @@ class _BackdropTitle extends AnimatedWidget {
                   begin: Offset.zero,
                   end: const Offset(1.0, 0.0),
                 ).evaluate(animation),
-                child: const ImageIcon(AssetImage('assets/diamond.png')),
+                child:
+                    const ImageIcon(AssetImage('assets/watch.png'), size: 20.0),
               )
             ]),
           ),

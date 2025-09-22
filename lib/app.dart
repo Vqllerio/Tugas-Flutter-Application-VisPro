@@ -41,7 +41,7 @@ class _ShrineAppState extends State<ShrineApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Shrine',
+      title: 'Woch',
       initialRoute: '/login',
       routes: {
         '/login': (BuildContext context) => const LoginPage(),
@@ -56,7 +56,7 @@ class _ShrineAppState extends State<ShrineApp> {
                 currentCategory: _currentCategory,
                 onCategoryTap: _onCategoryTap,
               ),
-              frontTitle: const Text('SHRINE'),
+              frontTitle: const Text('WOCH'),
               backTitle: const Text('MENU'),
             ),
       },

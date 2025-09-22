@@ -36,10 +36,10 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 80.0),
             Column(
               children: <Widget>[
-                Image.asset('assets/diamond.png'),
+                Image.asset('assets/watch.png', width: 100, height: 100),
                 const SizedBox(height: 16.0),
                 Text(
-                  'SHRINE',
+                  'WOCH',
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ],

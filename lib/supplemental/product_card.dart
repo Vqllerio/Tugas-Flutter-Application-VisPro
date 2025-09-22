@@ -30,14 +30,21 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final NumberFormat formatter = NumberFormat.simpleCurrency(
-        decimalDigits: 0, locale: Localizations.localeOf(context).toString());
+    // Format price as Indonesian Rupiah (IDR)
+    final NumberFormat formatter = NumberFormat.currency(
+      locale: 'id_ID', // Indonesian locale
+      symbol: 'Rp ', // Rupiah symbol
+      decimalDigits: 0, // No decimal places
+    );
+
     final ThemeData theme = Theme.of(context);
 
-    final imageWidget = Image.asset(
-      product.assetName,
-      package: product.assetPackage,
-      fit: BoxFit.cover,
+    final imageWidget = Container(
+      color: Colors.grey[200], // background behind PNG (optional)
+      child: Image.asset(
+        product.assetPath,
+        fit: BoxFit.cover,
+      ),
     );
 
     return Column(
@@ -64,7 +71,7 @@ class ProductCard extends StatelessWidget {
               ),
               const SizedBox(height: 4.0),
               Text(
-                formatter.format(product.price),
+                formatter.format(product.price), // Shows Rp format
                 style: theme.textTheme.bodySmall,
               ),
             ],

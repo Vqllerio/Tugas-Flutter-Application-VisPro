@@ -14,9 +14,12 @@
 
 enum Category {
   all,
-  accessories,
-  clothing,
-  home,
+  digital,
+  analog,
+  smart,
+  luxury,
+  sport,
+  casual,
 }
 
 class Product {
@@ -26,6 +29,7 @@ class Product {
     required this.isFeatured,
     required this.name,
     required this.price,
+    required this.assetName,
   });
 
   final Category category;
@@ -33,9 +37,9 @@ class Product {
   final bool isFeatured;
   final String name;
   final int price;
+  final String assetName; // e.g. "apple_watch_silver_white_sports_band.jpg"
 
-  String get assetName => '$id-0.jpg';
-  String get assetPackage => 'shrine_images';
+  String get assetPath => 'assets/watches/$assetName';
 
   @override
   String toString() => "$name (id=$id)";
